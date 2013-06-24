@@ -2,7 +2,7 @@
 $now = new DateTime();
 
 
-$brightnessM = `cat brightness`;
+$brightnessM = `cat brightness1`;
 $brightnessV = `cat brightness0`;
 $status = "";
 $favico = "images/geenkel.ico";
@@ -22,7 +22,7 @@ if ($brightnessV > 0) {
     }
 }
 
-$timeM = new DateTime(`cat timestamp`);
+$timeM = new DateTime(`cat timestamp1`);
 $timeV = new DateTime(`cat timestamp0`);
 ?>
 <!DOCTYPE html>

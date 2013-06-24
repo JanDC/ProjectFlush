@@ -3,7 +3,7 @@ include("fetch.php");
 include("insert.php");
 $toilet=1;
 $lastrow = selectLastLog($toilet);
-$brightness = `cat brightness`;
+$brightness = `cat brightness1`;
 $state = $brightness > 0 ? true : false;
 $dbstate = $lastrow['state'];
 
@@ -12,6 +12,6 @@ if ($state != $dbstate) {
     $lastrow = selectLastLog($toilet);
     echo $lastrow['timestamp'];
 } else {
-    echo `cat timestamp`;
+    echo `cat timestamp1`;
 }
 ?>
