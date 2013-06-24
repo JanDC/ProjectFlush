@@ -1,6 +1,6 @@
 <?php
 
-$img=imagecreatefromjpeg('wc0.jpeg');
+$img=imagecreatefromjpeg('ramcache/wc0.jpeg');
 
 imagefilter($img, IMG_FILTER_CONTRAST, -20);
 
