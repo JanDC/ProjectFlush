@@ -6,14 +6,14 @@ $brightnessV = `cat ramcache/brightness0`;
 $status = "";
 $favico = "images/geenkel.ico";
 
-if ($brightnessM > 0) {
+if ($brightnessM > 20) {
     $statusM = "occupado";
     $favico = "images/herr.ico";
 }
 
-if ($brightnessV > 0) {
+if ($brightnessV > 20) {
     $statusV = "occupado";
-    
+
     if($statusM == "occupado"){
         $favico = "images/allezwei.ico";
     }else{
@@ -39,7 +39,7 @@ $timeV = new DateTime(`cat ramcache/timestamp0`);
         <!-- Replace favicon.ico & apple-touch-icon.png in the root of your domain and delete these references -->
         <link rel="shortcut icon" href="<?php echo $favico; ?>" />
         <link rel="apple-touch-icon" href="images/apple-touch-icon.png" />		
-        <link rel="stylesheet" href="css/style.css" />
+        <link rel="stylesheet" href="css/style<?php echo (isset($_GET["style"])) ? "2" : ""; ?>.css" />
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
         <script src="http://ricostacruz.com/jquery.transit/jquery.transit.min.js"></script>
 
@@ -121,42 +121,34 @@ if ($brightnessV > 0) {
                         $('#heren .active').transition({ opacity: 0 },1000);
                         $('#heren .status').text("libre");
                         man_bezet = 0;
-                                
-                        changeFavicon('images/geenkel.ico');
+
                     }else if(data[0][1].state=="1" && man_bezet == 0){
                         $('#heren .icon').transition({ scale: 1 },1000);
                         $('#heren .active').transition({ opacity: 1 },1000);
                         $('#heren .status').html("ocupado<div class=\"time\">"+data[0][1].timestamp+"</div>");
                         man_bezet = 1;
-                                
-                        changeFavicon('images/herr.ico');
-                    }
+                   }
 		    //set ladystate
                     if(data[0][0].state=="0" && vrouw_bezet == 1){
                         $('#dames .icon').transition({ scale: 0.815 },1000);
                         $('#dames .active').transition({ opacity: 0 },1000);
                         $('#dames .status').text("libre");
                         vrouw_bezet = 0;
-                        
-                        if(man_bezet){
-                            changeFavicon('images/herr.ico');
-                        }else{
-                            changeFavicon('images/geenkel.ico');
-                        }
-                        
-                        
-                    }else if(data[0][0].state=="1" && vrouw_bezet == 0){
+                  }else if(data[0][0].state=="1" && vrouw_bezet == 0){
                         $('#dames .icon').transition({ scale: 1 },1000);
                         $('#dames .active').transition({ opacity: 1 },1000);
                         $('#dames .status').html("ocupado<div class=\"time\">"+data[0][0].timestamp+"</div>");
                         vrouw_bezet = 1;
-                                
-                         if(man_bezet){
-                            changeFavicon('images/allezwei.ico');
-                        }else{
-                            changeFavicon('images/fraulein.ico');
-                        }
-                    }
+                  }
+			if(man_bezet && vrouw_bezet){
+			changeFavicon('images/allezwei.ico');
+			}else if(man_bezet && !vrouw_bezet){
+			changeFavicon('images/herr.ico');
+			}else if(!man_bezet && vrouw_bezet){
+			changeFavicon('images/fraulein.ico');
+			}else{
+			changeFavicon('images/geenkel.ico');
+			}
                 }
             });},5000);
                     

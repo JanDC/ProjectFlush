@@ -4,7 +4,7 @@ include("insert.php");
 $toilet=0;
 $lastrow = selectLastLog($toilet);
 $brightness = `cat ramcache/brightness0`;
-$state = $brightness > 0 ? true : false;
+$state = $brightness > 20 ? true : false;
 $dbstate = $lastrow['state'];
 
 if ($state != $dbstate) {

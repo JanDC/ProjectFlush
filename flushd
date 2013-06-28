@@ -16,14 +16,12 @@ set -e
 case $1 in
 	start)
 		log_daemon_msg "Starting Intracto flush daemon" "flushd"
-        mount -t tmpfs none /var/www/ramcache
 		su - pi -c "cd /var/www && ./bash_daemon.sh &"
 		echo
 	;;
 	stop)
 		log_daemon_msg "Stopping web server" "flushd"
 		killall -9 bash_daemon.sh
-        umount /var/www/ramcache
 		echo
 	;;
 	*)
