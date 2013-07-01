@@ -18,7 +18,7 @@ if ($state != $dbstate) {
 	echo $lastrow['timestamp'];
 	}else{
 		//remove last row
-		deleteRow($lastrow['id']);
+		deleteLog($lastrow['id']);
 	}
 } else {
     echo `cat ramcache/timestamp1`;
