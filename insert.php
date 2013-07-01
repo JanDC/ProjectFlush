@@ -8,5 +8,12 @@ function insertLog($state,$toilet=1)
     $result = mysql_query($query) or trigger_error(mysql_error());
 
 }
+function deleteLog($id)
+{
+    $query = sprintf("DELETE FROM `log` WHERE id = %s",
+        $id);
+    $result = mysql_query($query) or trigger_error(mysql_error());
+
+}
 
 ?>

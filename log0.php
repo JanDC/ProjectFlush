@@ -6,12 +6,21 @@ $lastrow = selectLastLog($toilet);
 $brightness = `cat ramcache/brightness0`;
 $state = $brightness > 20 ? true : false;
 $dbstate = $lastrow['state'];
+$timestamp_c= `cat ramcache/timestamp0`;
+$timestamp_l=$lastrow['timestamp'];
+$t_c=strtotime($timestamp_c);
+$t_l=strtotime($timestamp_l);
 
 if ($state != $dbstate) {
-    insertLog($state,$toilet);
-    $lastrow = selectLastLog($toilet);
-    echo $lastrow['timestamp'];
+	if ($t_c- $t_l > 5) {
+	insertLog($state,$toilet);
+	$lastrow = selectLastLog($toilet);
+	echo $lastrow['timestamp'];
+	}else{
+		//remove last row
+		deleteRow($lastrow['id']);
+	}
 } else {
-    echo `cat ramcache/timestamp0`;
+	echo `cat ramcache/timestamp0`;
 }
 ?>
