@@ -12,14 +12,14 @@ $t_c=strtotime($timestamp_c);
 $t_l=strtotime($timestamp_l);
 
 if ($state != $dbstate) {
-	if ($t_c- $t_l > 5) {
+	if (($t_c- $t_l) > 5) {
 	insertLog($state,$toilet);
-	$lastrow = selectLastLog($toilet);
-	echo $lastrow['timestamp'];
 	}else{
 		//remove last row
 		deleteLog($lastrow['id']);
 	}
+	$lastrow = selectLastLog($toilet);
+	echo $lastrow['timestamp'];
 } else {
     echo `cat ramcache/timestamp1`;
 }
