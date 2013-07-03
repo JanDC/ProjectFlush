@@ -125,7 +125,7 @@ if ($brightnessV > 0) {
                     }else if(data[0][1].state=="1" && man_bezet == 0){
                         $('#heren .icon').transition({ scale: 1 },1000);
                         $('#heren .active').transition({ opacity: 1 },1000);
-                        $('#heren .status').html("ocupado<div class=\"time\">"+data[0][1].timestamp+"</div>");
+                        $('#heren .status').html("ocupado<div class=\"time\">"+data[0][1].timestamp+"</div><div>due "+data[0][1].due+"</div>");
                         man_bezet = 1;
                    }
 		    //set ladystate
@@ -137,7 +137,7 @@ if ($brightnessV > 0) {
                   }else if(data[0][0].state=="1" && vrouw_bezet == 0){
                         $('#dames .icon').transition({ scale: 1 },1000);
                         $('#dames .active').transition({ opacity: 1 },1000);
-                        $('#dames .status').html("ocupado<div class=\"time\">"+data[0][0].timestamp+"</div>");
+                        $('#dames .status').html("ocupado<div class=\"time\">"+data[0][0].timestamp+"</div><div>due "+data[0][0].due+"</div>");
                         vrouw_bezet = 1;
                   }
 			if(man_bezet && vrouw_bezet){

@@ -47,5 +47,5 @@ foreach($rows as $row){
 }
 
 echo "<h1>Estimated time to release:</h1>";
-echo "Men: ".$men."s";
+echo "Men: ".$men."s<br>";
 echo "Women: ".$women."s";
