@@ -2,45 +2,50 @@
 
 include('config.php');
 
-  $rows = array();
-$totals=0;
-    $sql = "SELECT sum(state) as visits, DATE_FORMAT(timestamp,'%H') as hour FROM log 
-	WHERE DATE_FORMAT(timestamp,'%d%m%y') = DATE_FORMAT(CURRENT_TIMESTAMP,'%d%m%y') and toilet_id = 1 
-	GROUP BY DATE_FORMAT(timestamp,'%H')";
-    $result = mysql_query($sql) or trigger_error(mysql_error());
-    while ($row = mysql_fetch_array($result)) {
-        foreach ($row AS $key => $value) {
-            $row[$key] = stripslashes($value);
-        }
-        $rows[] = $row;
-
+$rows = array();
+$sql = "SELECT avg(d.duration) as total_duration FROM (
+    SELECT (o.`timestamp`-i.`timestamp`) as duration,DATE_FORMAT(i.timestamp,'%y%m%d') as date
+    FROM `log` i,`log` o 
+    WHERE o.`toilet_id`=i.`toilet_id`
+    AND o.state=0
+    AND i.toilet_id=1
+    AND i.state=1
+    AND o.`timestamp` > i.`timestamp`
+    GROUP BY i.id) as d
+GROUP BY d.date";
+$result = mysql_query($sql) or trigger_error(mysql_error());
+while ($row = mysql_fetch_array($result)) {
+    foreach ($row AS $key => $value) {
+        $row[$key] = stripslashes($value);
     }
-echo "Today's stats: Gentlemen<br>";
-foreach($rows as $row){
-echo "hour: ".$row['hour']." => #visits: ".$row['visits']."<br>";
-$totals+=$row['visits'];
+    $rows[] = $row;
 }
-echo "Total visits: ".$totals;
-echo "<hr/>";
+foreach($rows as $row){
+    $men=$row['total_duration'];
+}
 
-
-$totals=0;
-
-  $rows = array();
-    $sql = "SELECT sum(state) as visits, DATE_FORMAT(timestamp,'%H') as hour FROM log 
-        WHERE DATE_FORMAT(timestamp,'%d%m%y') = DATE_FORMAT(CURRENT_TIMESTAMP,'%d%m%y') and toilet_id = 0
-        GROUP BY DATE_FORMAT(timestamp,'%H')";
-    $result = mysql_query($sql) or trigger_error(mysql_error());
-    while ($row = mysql_fetch_array($result)) {
-        foreach ($row AS $key => $value) {
-            $row[$key] = stripslashes($value);
-        }
-        $rows[] = $row;
+$rows = array();
+$sql = "SELECT avg(d.duration) as total_duration FROM (
+    SELECT (o.`timestamp`-i.`timestamp`) as duration,DATE_FORMAT(i.timestamp,'%y%m%d') as date
+    FROM `log` i,`log` o 
+    WHERE o.`toilet_id`=i.`toilet_id`
+    AND o.state=0
+    AND i.toilet_id=0
+    AND i.state=1
+    AND o.`timestamp` > i.`timestamp`
+    GROUP BY i.id) as d
+GROUP BY d.date";
+$result = mysql_query($sql) or trigger_error(mysql_error());
+while ($row = mysql_fetch_array($result)) {
+    foreach ($row AS $key => $value) {
+        $row[$key] = stripslashes($value);
     }
-echo "Today's stats: Ladies<br>";
-foreach($rows as $row){
-$totals+=$row['visits'];
-echo "hour: ".$row['hour']." => #visits: ".$row['visits']."<br>";
+    $rows[] = $row;
 }
-echo "Total visits: ".$totals;
+foreach($rows as $row){
+    $women=$row['total_duration'];
+}
 
+echo "<h1>Estimated time to release:</h1>";
+echo "Men: ".$men."s";
+echo "Women: ".$women."s";
