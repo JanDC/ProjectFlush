@@ -10,15 +10,15 @@ if ($all) {
 	$reponseM_datetime = new DateTime($arrReponseM['timestamp']);
 	$dueM= new DateTime($arrReponseM['timestamp']+ selectAverageDurationByToilet(1));
 	$arrReponseM['timestamp'] = $reponseM_datetime->format("H:i");
-	$arrReponseM['due']=$dueM->format("H:i");
-
-
+	$arrReponseM['due']=$dueM->format("H:i:s");
 	$arrReponseF = selectLastLog(0);
 	$reponseF_datetime = new DateTime($arrReponseF['timestamp']);
 	$dueF= new DateTime($arrReponseF['timestamp']+ selectAverageDurationByToilet(0));
 	$arrReponseF['timestamp'] = $reponseF_datetime->format("H:i");
-	$arrReponseF['due']=$dueF->format("H:i");
+	$arrReponseF['due']=$dueF->format("H:i:s");
 	
+	file_put_contents("ramcache/due1", $dueM->format("H:i:s"));
+	file_put_contents("ramcache/due0", $dueF->format("H:i:s"));
 	echo json_encode(array('0'=>$arrReponseF,'1'=>$arrReponseM));
 }
 ?>
