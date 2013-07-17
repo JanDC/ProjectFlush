@@ -8,12 +8,14 @@ $state = $brightness > 20 ? true : false;
 $dbstate = $lastrow['state'];
 $timestamp_c= `cat ramcache/timestamp1`;
 $timestamp_l=$lastrow['timestamp'];
-$t_c=strtotime($timestamp_c);
-$t_l=strtotime($timestamp_l);
+$t_c=new DateTime($timestamp_c)->getTimestamp();
+$t_l=new DateTime($timestamp_l)->getTimestamp();
+
+
 
 if ($state != $dbstate) {
 	if (($t_c- $t_l) > 5) {
-	insertLog($state,$toilet);
+		insertLog($state,$toilet);
 	}else{
 		//remove last row
 		deleteLog($lastrow['id']);
@@ -21,6 +23,6 @@ if ($state != $dbstate) {
 	$lastrow = selectLastLog($toilet);
 	echo $lastrow['timestamp'];
 } else {
-    echo `cat ramcache/timestamp1`;
+	echo `cat ramcache/timestamp1`;
 }
 ?>
