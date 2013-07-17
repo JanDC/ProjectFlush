@@ -8,8 +8,10 @@ $state = $brightness > 20 ? true : false;
 $dbstate = $lastrow['state'];
 $timestamp_c= `cat ramcache/timestamp0`;
 $timestamp_l=$lastrow['timestamp'];
-$t_c=new DateTime($timestamp_c)->getTimestamp();
-$t_l=new DateTime($timestamp_l)->getTimestamp();
+$t_cdt=new DateTime($timestamp_c);
+$t_c=$t_dt->getTimestamp();
+$t_ldt=new DateTime($timestamp_l);
+$t_l=$t_ldt->getTimestamp();
 
 if (!($t_c && $t_l)) {
 	echo `cat ramcache/timestamp0`;
