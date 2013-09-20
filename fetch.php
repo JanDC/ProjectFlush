@@ -41,7 +41,7 @@ function selectLastLog($toilet)
 {
     $rows = array();
 
-    $sql = sprintf("SELECT * FROM `log` WHERE `toilet_id` = '%s' ",
+    $sql = sprintf("SELECT * FROM `log` WHERE `toilet_id` = '%s' ORDER BY id DESC LIMIT 1 ",
         mysql_real_escape_string($toilet));
     $result = mysql_query($sql) or trigger_error(mysql_error());
     if (!$result) {
