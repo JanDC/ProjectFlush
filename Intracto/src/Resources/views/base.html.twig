@@ -1,0 +1,114 @@
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta name="keywords" content=""/>
+    <meta name="description" content=""/>
+    <meta name="author" content="intracto"/>
+    <title>Flight for friends</title>
+
+
+    <link rel="apple-touch-icon" sizes="57x57" href="{{ app.assets_base }}/images/favicons/apple-touch-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="114x114"
+          href="{{ app.assets_base }}/images/favicons/apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="{{ app.assets_base }}/images/favicons/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="144x144"
+          href="{{ app.assets_base }}/images/favicons/apple-touch-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="{{ app.assets_base }}/images/favicons/apple-touch-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="120x120"
+          href="{{ app.assets_base }}/images/favicons/apple-touch-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="{{ app.assets_base }}/images/favicons/apple-touch-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="152x152"
+          href="{{ app.assets_base }}/images/favicons/apple-touch-icon-152x152.png">
+    <link rel="icon" type="image/png" href="{{ app.assets_base }}/images/favicons/favicon-196x196.png" sizes="196x196">
+    <link rel="icon" type="image/png" href="{{ app.assets_base }}/images/favicons/favicon-160x160.png" sizes="160x160">
+    <link rel="icon" type="image/png" href="{{ app.assets_base }}/images/favicons/favicon-96x96.png" sizes="96x96">
+    <link rel="icon" type="image/png" href="{{ app.assets_base }}/images/favicons/favicon-16x16.png" sizes="16x16">
+    <link rel="icon" type="image/png" href="{{ app.assets_base }}/images/favicons/favicon-32x32.png" sizes="32x32">
+    <link rel="shortcut icon" href="{{ app.assets_base }}/favicon.ico"/>
+
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="msapplication-TileImage" content="{{ app.assets_base }}/images/favicons/mstile-144x144.png">
+
+    <link href="{{ app.assets_base }}/css/reset.css" rel="stylesheet" type="text/css"/>
+    <link href="{{ app.assets_base }}/css/uniform.css" rel="stylesheet" type="text/css"/>
+    <link href="{{ app.assets_base }}/css/style.css" rel="stylesheet" type="text/css"/>
+    <link href="{{ app.assets_base }}/css/scratch_2.css" rel="stylesheet" type="text/css"/>
+
+
+    <script type="text/javascript">
+
+        var _gaq = _gaq || [];
+        var pluginUrl = '//www.google-analytics.com/plugins/ga/inpage_linkid.js';
+        _gaq.push(['_require', 'inpage_linkid', pluginUrl]);
+
+        _gaq.push(['_setAccount', 'UA-23619955-1']);
+        _gaq.push(['_trackPageview']);
+
+        (function () {
+            var ga = document.createElement('script');
+            ga.type = 'text/javascript';
+            ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'stats.g.doubleclick.net/dc.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(ga, s);
+
+        })();
+
+    </script>
+    <!--[if IE 6]>
+    <link href="{{ app.assets_base }}/css/csshover.css" rel="stylesheet" type="text/css"/>
+    <script src="{{ app.assets_base }}/js/DD_belatedPNG.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        /* <![CDATA[ */
+				DD_belatedPNG.fix('h2,div,img,a,li,ul,span,input,form');
+			 /* ]]> */
+			</script>
+		<![endif]-->
+    <!--[if lt IE 9]>
+    <script src="{{ app.assets_base }}/js/html5shiv.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+<div class="container">
+    <input type="hidden" id="base_path" value="{{ app.assets_base }}">
+    <header>
+        <img src="{{ app.assets_base }}/images/logo-brussels-airlines.png">
+
+        <div class="site-logo"><img src="{{ app.assets_base }}/images/logo.png"></div>
+        {% block header %}
+
+        {% endblock %}
+    </header>
+    <div id="content" class="clearfix">
+        {% block body %}
+        {% endblock %}
+    </div>
+    <footer>
+        {% block footer %}
+            <a href="{{ url('rules') }}" target="_blank" id="link_rules_footer">Wedstrijdreglement</a> | <a
+                href="http://www.bruxx.be"
+                target="_blank" id="link_bruxx_footer">BRUXX.be</a>
+        {% endblock %}
+    </footer>
+</div>
+
+{% block javascripts %}
+    <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="//code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+    <script src="{{ app.assets_base }}/js/jquery.ui.touch-punch.min.js"></script>
+    <script src="{{ app.assets_base }}/js/jquery.uniform.min.js"></script>
+    <script src="{{ app.assets_base }}/js/min/global.min.js"></script>
+
+    <script type="text/javascript">
+        function pushToGA(content) {
+            var data = ['_trackEvent', 'Flight for friends', '{{ current_page_name }}', '' + content + ''];
+            _gaq.push(data);
+        }
+    </script>
+{% endblock %}
+
+</body>
+</html>

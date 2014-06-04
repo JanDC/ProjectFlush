@@ -1,0 +1,90 @@
+lander.title: "Deel de trip van je leven met je\nbeste vrienden dankzij BRUXX,\nBrussels Airlines en VIER"
+
+question1.registration.title: "BRUXX, Brussels Airlines en VIER\nsturen 4 Freunden naar Berlijn\n(und zurück)"
+question1.registration.text: "Pak je witte sokken en sandalen en toon jezelf van je meest modebewuste kant in trendy Berlijn.\nPak ook je beste vrienden mee, want we geven in 1 moeite 3x4 tickets van Brussels Airlines weg!"
+question1.registration.subtitle: "Deelnemen? \n Check hier snel in!"
+question1.registration.subtext: Check alvast in, dan ben je sneller weg als je wint.
+question1.registration.name: Naam
+question1.registration.first_name: Voornaam
+question1.registration.email: E-mailadres
+question1.registration.birthday: Geboortedatum
+question1.registration.optin_bruxx: Ik blijf graag op de hoogte van de aanbiedingen van BRUXX en Brussels Airlines.
+question1.registration.optin_vier: Ik blijf graag op de hoogte van de aanbiedingen van VIER.
+question1.registration.sidenote: "* Deelnemen aan deze wedstrijd om een trip naar Berlijn te winnen kan van maandag 05 mei 2014 00.01 u t/m zondag 11 mei 2014 23.59 u. De winnaar wordt volgende week maandag bekendgemaakt op de Facebookpagina van BRUXX."
+
+registration.already_used: "Je hebt al eens meegedaan deze week. 1 deelname per persoon per week."
+
+postregistration.question1.title: "Je werd succesvol geregistreerd."
+postregistration.question1.text: "Klaar om aan boord te gaan van de Brussels Airlines vlucht naar Berlijn?"
+postregistration.question1.button: "I was born ready!"
+
+postregistration.question2.title: "Je werd succesvol geregistreerd."
+postregistration.question2.text: "Klaar om aan boord te gaan van de Brussels Airlines vlucht naar Boedepast?"
+postregistration.question2.button: "I was born ready!"
+
+postregistration.question3.title: "Je werd succesvol geregistreerd."
+postregistration.question3.text: "Klaar om aan boord te gaan van de Brussels Airlines vlucht naar Kopenhagen?"
+postregistration.question3.button: "I was born ready!"
+
+postregistration.question4.title: "Je werd succesvol geregistreerd."
+postregistration.question4.text: "Klaar om aan boord te gaan van de Brussels Airlines vlucht naar Barcelona?"
+postregistration.question4.button: "I was born ready!"
+
+question1.game.title: "Vind de link in de bagage!"
+question1.game.text: "Sleep de koffer naar de band en analyseer zorgvuldig de inhoud. Welke kledij\nen accessoires horen bij deze 4 stijliconen? Hoe sneller je correct antwoordt,\nhoe beter je score."
+
+question2.registration.title: "BRUXX, Brussels Airlines en VIER\nsturen 4 meerwaardezoekers\nnaar Boeda én naar Pest"
+question2.registration.text: "Frons je wenkbrauwen en oefen alvast je meest intellectuele blik, want wie weet krijg jij\neen cultuurkuur tijdens The Night of the Museums in Boedapest.\nPak ook je beste vrienden mee, want we geven in 1 moeite 3x4 tickets van Brussels Airlines weg!"
+question2.registration.sidenote: "* Deelnemen aan deze wedstrijd om een trip naar Boedepast te winnen kan van maandag 12 mei 2014 00.01 u t/m zondag 18 mei 2014 23.59 u. De winnaar wordt volgende week maandag bekendgemaakt op de Facebookpagina van BRUXX."
+
+
+question2.game.title: "Herken jij de kunstwerken?"
+question2.game.text: "Aan boord van de Brussels Airlines vlucht naar Boedapest zitten enkele\nopmerkelijke passagiers. Wie is die dame met de mysterieuze glimlach? Wie is\ndie schreeuwende man die zijn vliegangst niet onder controle lijkt te krijgen?\nBenoem de beroemde koppen zo snel mogelijk en win!"
+
+question3.registration.title: "BRUXX, Brussels Airlines en VIER\nstüren 4 vrinden nør Køpenhägen"
+question3.registration.text: "Ontdek delicieus Denemarken bij The Standard, een tøprestaurant in hartje Kopenhagen en\nhét adres bij uitstek voor verfijnde Scandinavische smaaksensaties. We hebben\neen tafeltje voor 4 gereserveerd, dus trommel ook je beste vrienden op. Dankzij\nBrussels Airlines is er zelfs plaats voor 3x4 lekkerbekken!"
+question3.registration.sidenote: "* Deelnemen aan deze wedstrijd om een trip naar Kopenhagen te winnen kan van maandag 19 mei 2014 00.01 u t/m zondag 25 mei 2014 23.59 u. De winnaar wordt volgende week maandag bekendgemaakt op de Facebookpagina van BRUXX."
+
+
+question3.game.title: "Lunchtijd op je vlucht naar\nKopenhagen"
+question3.game.text: "Lunchtijd op je Brussels Airlines vlucht naar Kopenhagen.\nWelke van de 4 schotels is typisch Deens?\nDie met de gesauteerde Kleine Zeemeermin? Zoek het zeker niet te ver."
+
+
+question4.registration.title: "BRUXX, Brussels Airlines en VIER\nsturen 4 feestneuzen naar\nde leukste 'bar' in Barcelona"
+question4.registration.text: "Smeer alvast je oren en je heupen, want wij sturen 3x4 muziekliefhebbers naar\nhet hipste feestje van Barcelona en omstreken met gratis tickets van Brussels Airlines\nén 3 overnachtingen. Vraag dus gerust je 3 beste vrienden ten dans!"
+question4.registration.sidenote: "* Deelnemen aan deze wedstrijd om een trip naar Barcelona te winnen kan van maandag 26 mei 2014 00.01 u t/m zondag 01 juni 2014 23.59 u. De winnaar wordt volgende week maandag bekendgemaakt op de Facebookpagina van BRUXX."
+
+
+question4.game.title: "Vlieg onze rocksterren naar hun\npodium in Barcelona"
+question4.game.text: "The Foe Flyers zijn op tournee doorheen Europa. Gebruik de spatiebalk\nop je toetsenbord en laat ze optreden in al deze bruisende bestemmingen.\nHoe meer steden je bezoekt, hoe beter je score!"
+
+tiebreaker.title: "Bedankt voor je deelname!"
+tiebreaker.answered_in: "Je hebt deze vraag beantwoord in"
+tiebreaker.scored: "Je hebt een score behaald van "
+tiebreaker.text: "Nu rest er je enkel nog de schiftingsvraag te beantwoorden."
+tiebreaker.question_title: "Schiftingsvraag"
+tiebreaker.label_answer: "Jouw antwoord"
+tiebreaker.question1.didyouknow: "Wist je dat je gratis tot 20 kg mag meenemen als je vertrekt met Brussels Airlines vanuit Brussels Airport? Zou zulke vrijgevigheid ooit mode worden ...?"
+tiebreaker.question2.didyouknow: "Volg de gids naar de leukste steden en stranden in en rond Europa. Ook al win je geen citytrip, dan vlieg je toch ‘bijna gratis’ via Brussels Airport!"
+tiebreaker.question3.didyouknow: "Honger gekregen na deze culinaire ronde? Op Brussels Airport vind je meer dan 20 bars en restaurants waaronder Starbucks, Pizza Hut, EXKi en Quick. "
+tiebreaker.question4.didyouknow: "Duik op BRUXX.be in het ruime aanbod van voordelige, rechtstreekse vluchten naar je favoriete bestemmingen in en rond Europa!"
+
+friendzone.title: "Vul je team aan!"
+friendzone.text: "Met 4 maak je meer plezier!\nNodig je 3 beste vrienden* uit om in te checken. Per speler maak je meer kans op\nde hoofdprijs. “Ik ga gratis op vakantie en neem mee: mijn beste vrienden!”"
+friendzone.manincharge: The captain
+friendzone.sailors: Wing(wo)man
+friendzone.name: Naam
+friendzone.email: E-mailadres
+friendzone.send: VERSTUUR UITNODIGING
+friendzone.disclaimer: "* Misschien selecteren op lijfgeur, aangezien jullie een weekend lang met elkaar opgescheept zitten."
+
+
+thankpage.title: Tot ziens!
+thankpage.text: "Wij duimen voor jou...\nLike jij onze pagina? Of ben je geen fan van voordelig vliegen? Bedankt in\nelk geval voor je deelname! Hopelijk tot gauw in de vertrekhal van Brussels Airport."
+thankpage.partners: Met dank aan onze vrijgevige partners VIER en Brussels Airlines
+Name: "Naam"
+First Name: "Voornaam"
+Email address: "E-mailadres"
+Birthday: "Geboortedatum"
+Answer: Antwoord
+This value should not be blank.: "mag niet leeg zijn."
