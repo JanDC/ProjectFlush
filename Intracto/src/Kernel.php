@@ -49,30 +49,13 @@ class Kernel
         $this->doctrine = $conf['doctrine'];
         $this->mailer = $conf['swiftmailer'];
         $this->security = $conf['security'];
-        $this->weekId = $conf['week_id'];
-        $this->startDate = $conf['startDate'];
-        $this->question_one_options = $conf['question_one_options'];
-        $this->question_one_heads = $conf['question_one_heads'];
-        $this->question_two_pictures = $conf['question_two_pictures'];
-        $this->question_two_options = $conf['question_two_options'];
-        $this->question_three_options = $conf['question_three_options'];
-        $this->tiebreakers = $conf['tiebreakers'];
-        $this->mailSubjects = $conf['mailSubjects'];
+
         $this->assets = $conf['assets'];
     }
 
     public function load(Application $app, $env = 'web')
     {
         $app['assets_base'] = $this->assets['base_url'];
-        $app['week_id'] = $this->weekId;
-        $app['mailSubjects'] = $this->mailSubjects;
-        $app['startDate'] = date_create_from_format("d-m-Y H:i:s", $this->startDate);
-        $app['question_one_options'] = $this->question_one_options;
-        $app['question_one_heads'] = $this->question_one_heads;
-        $app['question_two_pictures'] = $this->question_two_pictures;
-        $app['question_two_options'] = $this->question_two_options;
-        $app['question_three_options'] = $this->question_three_options;
-        $app['tiebreakers'] = $this->tiebreakers;
 
 
         $app->register(
@@ -115,35 +98,10 @@ class Kernel
         $app->register(new UrlGeneratorServiceProvider());
         $app->register(new FormServiceProvider());
         $app->register(new ValidatorServiceProvider());
-        $app->register(new TranslationServiceProvider(), array('locale_fallbacks' => array('nl'),));
-        $app['translator'] = $app->share(
-            $app->extend(
-                'translator',
-                function ($translator, $app) {
-                    $translator->addLoader('yaml', new YamlFileLoader());
-                    $translator->addResource('yaml', __DIR__ . '/Resources/translations/nl.yml', 'nl');
-
-                    return $translator;
-                }
-            )
-        );
 
         if ($env == "web") {
             //add web exclusive loaders here
-            $app->register(
-                new SecurityServiceProvider(),
-                array(
-                    'security.firewalls' => array(
-                        'admin' => array(
-                            'pattern' => '^/admin',
-                            'http' => true,
-                            'users' => array(
-                                $this->security['user'] => array($this->security['role'], $this->security['password'])
-                            ),
-                        )
-                    )
-                )
-            );
+
         } elseif ($env == "cli") {
             //add console exclusive loaders here
         }
@@ -152,21 +110,6 @@ class Kernel
         $app['intracto.mailService'] = $app->share(
             function () use ($app) {
                 return new MailService($app);
-            }
-        );
-        $app['intracto.registrationService'] = $app->share(
-            function () use ($app) {
-                return new RegistrationService($app);
-            }
-        );
-        $app['intracto.questionService'] = $app->share(
-            function () use ($app) {
-                return new QuestionService($app);
-            }
-        );
-        $app['intracto.question4Service'] = $app->share(
-            function () use ($app) {
-                return new QuestionFourService($app);
             }
         );
 
