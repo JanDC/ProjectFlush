@@ -43,8 +43,6 @@ class DefaultController implements ControllerProviderInterface
     {
         // creates a new controller based on the default route
         $that = $this; //php 5.3 workaround
-        $that->repo = new RegistrationRepository($app);
-        $that->emailrepo = new EmailRepository($app);
         $controllers = $app['controllers_factory'];
         $controllers->match(
             '/',

@@ -2,10 +2,9 @@
 require_once __DIR__ . '/../vendor/autoload.php';
 require_once __DIR__ . '/../Intracto/src/autoload.php';
 
-
 $app = new Silex\Application();
 
-$kernel = new \Intracto\Kernel(__DIR__ . "/config.php");
+$kernel = new Intracto\Kernel(__DIR__ . "/config.php");
 
 $app['debug'] = true;
 
