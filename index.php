@@ -7,6 +7,7 @@ $dueM = `cat ramcache/due1`;
 $dueV = `cat ramcache/due0`;
 $status = "";
 $favico = "images/geenkel.ico";
+$statusM = $statusV = "";
 
 if ($brightnessM > 20) {
     $statusM = "occupado";
